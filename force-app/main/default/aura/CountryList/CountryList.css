@@ -1,0 +1,28 @@
+.THIS.slds-grid {
+    text-align: center;
+}
+
+.THIS h1 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.THIS .slds-col {
+    border: 20px;
+}
+
+.THIS .centered {
+    text-align: center;
+}
+
+.THIS .slds-col--padded {
+    height: 100%;
+}
+
+.THIS .card {
+    font-size: 25px;
+}
+
+.THIS {
+    padding: 5px;
+}

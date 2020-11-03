@@ -1,0 +1,58 @@
+<aura:component controller="CountryListApexController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="currentCountry" type="String[]"/>
+    <aura:attribute name="currentServices" type="String[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div>
+        <h1>Travel Corp currently provides services for the following locations:</h1>
+    </div>
+    <div class="slds-grid slds-gutters">
+        
+        <div class="slds-col">
+            <lightning:card title="India" class="slds-align_absolute-center">
+                <lightning:button variant="brand" label="More Info" onclick="{!c.getIndia}"/>
+            </lightning:card>
+        </div>
+        <div class="slds-col">
+            <lightning:card title="Singapore" class="slds-align_absolute-center">
+                <lightning:button variant="brand" label="More Info" onclick="{!c.getSingapore}"/>
+            </lightning:card>
+        </div>
+        <div class="slds-col">
+            <lightning:card title="Germany" class="slds-align_absolute-center">
+                <lightning:button variant="brand" label="More Info" onclick="{!c.getGermany}"/>
+            </lightning:card>
+        </div>
+        <div class="slds-col">
+            <lightning:card title="Brazil" class="slds-align_absolute-center">
+                <lightning:button variant="brand" label="More Info" onclick="{!c.getBrazil}"/>
+            </lightning:card>
+        </div>
+        
+    </div>
+    
+    <div class="card">
+        <lightning:card title="{!v.currentCountry[0]}" class="slds-col--padded card" iconName="custom:custom68">
+            <p>Capital: {!v.currentCountry[1]}</p>
+            <p>Region: {!v.currentCountry[2]}</p>
+            <p>Population: {!v.currentCountry[3]}</p>
+            <p>Currencies: {!v.currentCountry[4]}</p>
+            <p>Languages: {!v.currentCountry[5]}</p>
+        </lightning:card>
+    </div>
+    <div class="card">
+        <lightning:card title="Services" class="slds-col--padded card" iconName="custom:custom96">
+            <aura:iteration items="{!v.currentServices}" var="service">
+                <p>{!service}</p>
+            </aura:iteration>
+        </lightning:card>
+    </div>
+    
+    <div class="centered">
+    	<lightning:button variant="success" iconName="utility:check" label="Add to Wishlist" onclick="{!c.addToWishlistController}"/>
+    </div>
+    
+    <div>
+        <lightning:button variant="destructive" iconName="utility:delete" label="Remove from Wishlist" onclick="{!c.removeFromWishlistController}"/>
+    </div>
+</aura:component>

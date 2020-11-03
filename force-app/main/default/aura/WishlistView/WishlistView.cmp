@@ -1,0 +1,34 @@
+<aura:component controller="WishlistViewApexController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="wishlist" type="Wishlist__c[]"/>
+    <aura:attribute name="services" type="Service__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getWishlistController}"/>
+    
+    <div>
+        <h1>Wishlist:</h1>
+    </div>
+    
+    <div>
+        <lightning:card title="" class="card">
+            <aura:iteration items="{!v.wishlist}" var="listItem">
+                <p>{!listItem.Name}</p>
+            </aura:iteration>
+        </lightning:card>
+    </div>
+    
+    <div>
+        <lightning:card title="Relevent Services" class="card">
+            <aura:iteration items="{!v.services}" var="service">
+                <p>{!service.Name}</p>
+            </aura:iteration>
+        </lightning:card>
+    </div>
+    
+    
+    <div class="button">
+        <div>
+        	<lightning:button variant="brand" label="Refresh" onclick="{!c.getWishlistController}"/>
+    	</div>
+    </div>
+    
+	
+</aura:component>

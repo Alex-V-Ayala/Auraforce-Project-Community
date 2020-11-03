@@ -1,0 +1,15 @@
+.THIS h1 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.THIS .card {
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.THIS .button {
+    display: flex;
+    justify-content: center;
+}
